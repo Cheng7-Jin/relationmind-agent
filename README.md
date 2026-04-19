@@ -47,10 +47,11 @@ pip install -r requirements.txt
 
 ## 配置
 
-项目使用 `.env` 环境变量配置 `DASHSCOPE_API_KEY`：
+项目使用 `.env` 环境变量配置：
 
 ```env
 DASHSCOPE_API_KEY=your_dashscope_api_key
+LANGCHAIN_API_KEY=your_langchain_api_key
 ```
 
 默认模型配置位于 `config/settings.py`：
