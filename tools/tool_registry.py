@@ -1,5 +1,5 @@
 from tools.emotion_tools import AnalyzeEmotionTool
-from tools.memory_tools import SaveMemoryTool, RetrieveMemoryTool
+from tools.memory_tools import SaveMemoryTool
 from tools.knowledge_tool import KnowledgeRetrieveTool
 from utils.logger import get_logger
 
@@ -8,7 +8,6 @@ logger = get_logger("ToolRegistry")
 class ToolRegistry:
     tools = {
         "analyze_emotion": AnalyzeEmotionTool(),
-        "retrieve_memory": RetrieveMemoryTool(),
         "save_memory": SaveMemoryTool(),
         "knowledge_retrieve": KnowledgeRetrieveTool(),
     }
@@ -32,20 +31,6 @@ class ToolRegistry:
                 "function": {
                     "name": "analyze_emotion",
                     "description": "分析用户当前情绪状态（开心、难过、焦虑、愤怒、孤独、中性）",
-                    "parameters": {
-                        "type": "object",
-                        "properties": {
-                            "user_input": {"type": "string", "description": "用户输入的对话内容"}
-                        },
-                        "required": ["user_input"]
-                    }
-                }
-            },
-            {
-                "type": "function",
-                "function": {
-                    "name": "retrieve_memory",
-                    "description": "检索用户历史情感记忆，用于更深度的个性化共情",
                     "parameters": {
                         "type": "object",
                         "properties": {
